@@ -1,0 +1,163 @@
+:root {
+  --color-cyan: hsl(179, 62%, 43%);
+  --color-cyan-lighter:  	hsl(179, 47%, 52%);
+  --color-bright-yellow: hsl(71, 73%, 54%);
+  --color-light-grey: hsl(204, 43%, 93%);
+  --color-greyish-blue: hsl(218, 22%, 67%); }
+
+html {
+  box-sizing: border-box;
+  font-size: 50%; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--color-light-grey);
+  font-family: 'Karla', sans-serif; }
+
+.attribution {
+  position: absolute;
+  bottom: 4rem;
+  font-size: 11px;
+  text-align: center;
+  animation-name: fadeIn;
+  animation-duration: 1s; }
+  @media only screen and (max-width: 640px) {
+    .attribution {
+      writing-mode: vertical-lr;
+      top: 25%;
+      right: 2.5rem; } }
+  @media only screen and (max-width: 430px) {
+    .attribution {
+      display: none; } }
+  .attribution a {
+    color: #3e52a3; }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes moveInBottom {
+  0% {
+    transform: translateY(5rem);
+    opacity: 0; }
+  100% {
+    transform: translate(0);
+    opacity: 1; } }
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  width: 65rem;
+  margin: 4rem;
+  box-shadow: 0 5px 15px rgba(1, 1, 1, 0.2);
+  border-radius: 1rem;
+  animation-name: moveInBottom;
+  animation-duration: 1s;
+  overflow: hidden; }
+  @media only screen and (max-width: 640px) {
+    .card {
+      display: flex;
+      flex-direction: column;
+      width: 39rem; } }
+  @media only screen and (max-width: 360px) {
+    .card {
+      font-size: 45%; } }
+  .card__section {
+    padding: 4rem;
+    color: white; }
+    .card__section h2 {
+      color: white;
+      font-size: 2rem;
+      font-weight: 400; }
+    .card__section__join {
+      grid-column: 1 / -1;
+      grid-row: 1 / 2;
+      background-color: white; }
+      .card__section__join h1 {
+        margin-bottom: 2rem;
+        color: var(--color-cyan);
+        font-size: 2.5rem;
+        font-weight: 400; }
+      .card__section__join h2 {
+        margin-bottom: 1.6rem;
+        color: var(--color-bright-yellow);
+        font-weight: 400; }
+      .card__section__join p {
+        color: var(--color-greyish-blue);
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 1.4; }
+    .card__section__price {
+      grid-column: 1 / 2;
+      grid-row: 2 / -1;
+      background-color: var(--color-cyan); }
+      .card__section__price h2 {
+        margin-bottom: 1rem; }
+      .card__section__price .price {
+        display: flex;
+        align-items: center;
+        margin-bottom: .6rem;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.4rem;
+        font-weight: 100; }
+        .card__section__price .price span {
+          margin-right: 1.6rem;
+          font-family: 'Karla', sans-serif;
+          font-size: 3.6rem;
+          font-weight: 400; }
+      .card__section__price .feature {
+        margin-bottom: 3rem;
+        font-size: 1.6rem;
+        font-weight: 400; }
+      .card__section__price button {
+        width: 100%;
+        padding: 1.8rem;
+        border: none;
+        border-radius: .6rem;
+        box-shadow: 0 5px 15px rgba(1, 1, 1, 0.2);
+        background-color: var(--color-bright-yellow);
+        cursor: pointer;
+        outline: none;
+        transition: all .2s; }
+        .card__section__price button:hover {
+          transform: translateY(-0.2rem);
+          background-color: #afcc2e; }
+        .card__section__price button:active {
+          transform: translateY(0rem);
+          background-color: #96ac35; }
+        .card__section__price button a {
+          color: white;
+          font-size: 1.6rem;
+          text-decoration: none; }
+    .card__section__features {
+      grid-column: 2 / -1;
+      grid-row: 2 / -1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: var(--color-cyan-lighter); }
+      @media only screen and (max-width: 640px) {
+        .card__section__features h2 {
+          margin-bottom: 2rem; } }
+      .card__section__features ul {
+        list-style: none; }
+        .card__section__features ul li {
+          line-height: 1.5;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 1.4rem;
+          font-weight: 100; }
